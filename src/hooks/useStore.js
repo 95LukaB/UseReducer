@@ -1,9 +1,14 @@
 import { create } from "zustand"
 
-
-
-export const useCounterStore = create((set)=>({
+export const useCounterStore = create((set)=> ({
     counter: 0,
-    inc: () => set((state) => ({counter: state.counter + 1})),
-    dec: () => set((state) => ({counter: state.counter - 1}))
+    inc: () => set ((state)=> ({counter: state.counter + 1})),
+    dec: () => set ((state)=> ({counter: state.counter - 1})),
+    reset: () => set(()=> ({counter: 0}))
+}))
+
+
+export const useTodosStore = create((set)=> ({
+    todos: [],
+    addTodo: (text)=> set((state)=> ({todos: [...state.todos, {id: Date.now(), text}]}))
 }))
