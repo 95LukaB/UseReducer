@@ -6,7 +6,7 @@ export const useCounterStore = create((set)=> ({
     dec: () => set ((state)=> ({counter: state.counter - 1})),
     reset: () => set(()=> ({counter: 0}))
 }))
-
+// test commit to trigger contributions
 
 export const useTodosStore = create((set)=> ({
     todos: [],
