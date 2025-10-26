@@ -3,6 +3,7 @@ import "./App.css";
 // import { useState } from "react";
 import UseReducerTwo from "./components/UseReducerTwo";
 import UseReducer from "./components/UseReducer";
+import useFetch from "./components/hooks/useFetch";
 
 function App() {
   // const { counter, inc, dec, reset } = useCounterStore();
@@ -13,6 +14,10 @@ function App() {
   //   addTodo(newTodo)
   //   setNewTodo("")
   // }
+  const url = "https://jsonplaceholder.typicode.com/users"
+  const {items, loading, error} = useFetch(url)
+  
+  
 
  
   return (
@@ -28,7 +33,9 @@ function App() {
         {todos.map(todo=> <li key={todo.id}>{todo.text} <button onClick={()=> deleteTodo(todo.id)} >X</button></li>)}
       </ul> */}
 
-      <UseReducerTwo/>
+      {/* <UseReducerTwo/> */}
+      
+      
     </>
   );
 }
